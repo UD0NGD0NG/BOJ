@@ -21,8 +21,7 @@ void dfs(node cur) {
 }
 
 int main() {
-	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-	set<node> start;
+	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);set<node> start;
 
 	int N; cin >> N;
 	while (N--) {
@@ -30,11 +29,8 @@ int main() {
 		node pre;
 		for (int i = 0; i < k; i++) {
 			string t; cin >> t;
-			
-			string floor = to_string(i);
-			if (floor.size() == 1) floor = "0" + floor;
 
-			node n = make_tuple(get<0>(pre) + floor + t, t, i);
+			node n = make_tuple(get<0>(pre) + to_string(i) + t, t, i);
 			if (i) {
 				info[pre].insert(n);
 			}
